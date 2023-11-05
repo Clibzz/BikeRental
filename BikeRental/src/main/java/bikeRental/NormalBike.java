@@ -8,7 +8,7 @@ public class NormalBike extends Bicycle {
         this.price = 0.2;
     }
 
-    public double price() {
+    public double getPrice() {
         return this.price;
     }
 }

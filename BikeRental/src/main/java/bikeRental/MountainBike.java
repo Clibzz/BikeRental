@@ -8,7 +8,7 @@ public class MountainBike extends Bicycle {
         this.price = 0.25;
     }
 
-    public double price() {
+    public double getPrice() {
         return this.price;
     }
 }
