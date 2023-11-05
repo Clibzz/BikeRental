@@ -11,7 +11,6 @@ class CustomerTest {
     private Customer andrea;
     private ElectricBike electricBike;
     private MountainBike mountainBike;
-    private NormalBike normalBike;
 
     @BeforeEach
     void setUp() {
@@ -20,7 +19,6 @@ class CustomerTest {
         andrea = new Customer("Andrea", 80.12);
         electricBike = new ElectricBike();
         mountainBike = new MountainBike();
-        normalBike = new NormalBike();
     }
 
     @Test
