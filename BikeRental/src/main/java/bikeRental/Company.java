@@ -42,6 +42,7 @@ public class Company {
      */
     public int checkAvailableBicyclesAmount() {
         int bicycleAmount = 0;
+        // Loop through all the bicycles of the company
         for (Bicycle bicycle : this.bicycles) {
             // Check if the current selected bicycle is in the list of rented bicycles
             if (!getRentedBicycles().containsKey(bicycle)) {
