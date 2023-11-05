@@ -13,6 +13,10 @@ public abstract class Bicycle {
         return this.travelledKilometers;
     }
 
+    /**
+     * Add the travelled amount of kilometers of a bicycle to the current amount
+     * @param travelledKilometers The travelled distance in kilometers
+     */
     public void addTravelledKilometers(int travelledKilometers) {
         this.travelledKilometers += travelledKilometers;
     }
@@ -20,5 +24,10 @@ public abstract class Bicycle {
     public double getDepositAmount() {
         return this.depositAmount;
     }
+
+    /**
+     * An abstract method to get the price per kilometer of the different kinds of bicycles
+     * @return The price per kilometer of renting a specific kind of bicycle
+     */
     public abstract double getPrice();
 }
