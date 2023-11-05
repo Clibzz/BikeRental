@@ -6,12 +6,10 @@ import java.util.HashSet;
 public class Company {
     private HashSet<Bicycle> bicycles;
     private HashMap<Bicycle, Customer> rentedBicycles;
-    private double balance;
 
     public Company() {
         this.bicycles = new HashSet<>();
         this.rentedBicycles = new HashMap<>();
-        this.balance = 0.00;
     }
 
     public void addBicycle(Bicycle bicycle) {
@@ -36,16 +34,6 @@ public class Company {
 
     public void removeRentedBicycle(Bicycle bicycle) {
         this.rentedBicycles.remove(bicycle);
-    }
-
-    public void addBalance(double amount)
-    {
-        this.balance += amount;
-    }
-
-    public double getBalance()
-    {
-        return this.balance;
     }
 
     public int getTotalTravelledKilometers() {

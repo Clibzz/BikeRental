@@ -13,25 +13,17 @@ public class Customer {
         return this.name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public double getBalance() {
         return this.balance;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public void rentBicycle(Bicycle bicycle, Company company) throws BicycleBorrowedException{
+    public void rentBicycle(Bicycle bicycle, Company company) {
         if (company.getBicycles().contains(bicycle)) {
-            if (!company.getRentedBicycles().containsKey(bicycle)) {
+            if (!company.getRentedBicycles().containsKey(bicycle) && !company.getRentedBicycles().containsValue(this)) {
                 company.addRentedBicycle(bicycle, this);
                 this.balance -= bicycle.getDepositAmount();
             } else {
-                throw new BicycleBorrowedException();
+                System.out.println("The bicycle has already been borrowed by an other customer");
             }
         } else {
             System.out.println("The company currently doesn't own the selected bicycle, please try again!");
@@ -43,7 +35,12 @@ public class Customer {
         if (company.getRentedBicycles().containsKey(bicycle) && company.getRentedBicycles().containsValue(this)) {
             price += (bicycle.getPrice() * travelledDistance) + (travelledTimeInHours * 2) - (bicycle.getDepositAmount());
             company.removeRentedBicycle(bicycle);
-            this.balance -= price;
+            if (this.balance >= price) {
+                this.balance -= price;
+            }
+            else {
+                System.out.println("The customer does not have enough balance to pay for renting the bicycle");
+            }
             bicycle.addTravelledKilometers(travelledDistance);
         }
     }
