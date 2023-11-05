@@ -2,12 +2,14 @@ package bikeRental;
 
 public class Customer {
     private String name;
+    private double balance;
 
-    public Customer(String name) {
+    public Customer(String name, double balance) {
         this.name = name;
+        this.balance = balance;
     }
 
-    public String name() {
+    public String getName() {
         return this.name;
     }
 
@@ -15,11 +17,19 @@ public class Customer {
         this.name = name;
     }
 
+    public double getBalance() {
+        return this.balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
     public void rentBicycle(Bicycle bicycle, Company company) throws BicycleBorrowedException{
         if (company.getBicycles().contains(bicycle)) {
             if (!company.getRentedBicycles().containsKey(bicycle)) {
                 company.addRentedBicycle(bicycle, this);
-                //Pay 20$
+                this.balance -= bicycle.getDepositAmount();
             } else {
                 throw new BicycleBorrowedException();
             }
@@ -28,16 +38,13 @@ public class Customer {
         }
     }
 
-    public void handBicycleIn(int travelledDistance, Bicycle bicycle) {
+    public void handBicycleIn(int travelledTimeInHours, int travelledDistance, Bicycle bicycle, Company company) {
         double price = 0;
-        Company company = new Company();
-        if (company.getRentedBicycles().containsKey(bicycle))
-
+        if (company.getRentedBicycles().containsKey(bicycle) && company.getRentedBicycles().containsValue(this)) {
+            price += (bicycle.getPrice() * travelledDistance) + (travelledTimeInHours * 2) - (bicycle.getDepositAmount());
+            company.removeRentedBicycle(bicycle);
+            this.balance -= price;
+            bicycle.addTravelledKilometers(travelledDistance);
+        }
     }
-
-
-    //Rent bicycle
-
-    //Hand in bicycle + pay
-
 }
