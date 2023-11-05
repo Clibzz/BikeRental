@@ -7,8 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BicycleTest {
     private Company company;
-    private ElectricBike electricBike;
-    private MountainBike mountainBike;
     private NormalBike normalBike;
     private Customer peter;
     private Customer pedro;
@@ -16,8 +14,6 @@ class BicycleTest {
     @BeforeEach
     void setUp() {
         company = new Company();
-        electricBike = new ElectricBike();
-        mountainBike = new MountainBike();
         normalBike = new NormalBike();
         peter = new Customer("Peter", 75.69);
         pedro = new Customer("Pedro", 100.00);
