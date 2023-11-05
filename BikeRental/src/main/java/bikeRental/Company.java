@@ -32,10 +32,29 @@ public class Company {
         return this.rentedBicycles;
     }
 
+    /**
+     * Check the amount of bicycles that's currently available
+     * @return The current amount of available bicycles
+     */
+    public int checkAvailableBicyclesAmount() {
+        int bicycleAmount = 0;
+        for (Bicycle bicycle : this.bicycles) {
+            // Check if the current selected bicycle is in the list of rented bicycles
+            if (!getRentedBicycles().containsKey(bicycle)) {
+                bicycleAmount++;
+            }
+        }
+        return bicycleAmount;
+    }
+
     public void removeRentedBicycle(Bicycle bicycle) {
         this.rentedBicycles.remove(bicycle);
     }
 
+    /**
+     * Get the total amount of
+     * @return
+     */
     public int getTotalTravelledKilometers() {
         int totalTravelledKilometers = 0;
         for (Bicycle bicycle : this.bicycles) {
