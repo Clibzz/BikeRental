@@ -32,6 +32,10 @@ public class Company {
         return this.rentedBicycles;
     }
 
+    public void removeRentedBicycle(Bicycle bicycle) {
+        this.rentedBicycles.remove(bicycle);
+    }
+
     /**
      * Check the amount of bicycles that's currently available
      * @return The current amount of available bicycles
@@ -47,13 +51,9 @@ public class Company {
         return bicycleAmount;
     }
 
-    public void removeRentedBicycle(Bicycle bicycle) {
-        this.rentedBicycles.remove(bicycle);
-    }
-
     /**
-     * Get the total amount of
-     * @return
+     * Get the total amount of travelled kilometers
+     * @return The total travelled distance of all bikes of the company in kilometers
      */
     public int getTotalTravelledKilometers() {
         int totalTravelledKilometers = 0;
