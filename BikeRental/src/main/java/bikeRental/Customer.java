@@ -40,17 +40,17 @@ public class Customer {
 
     /**
      * Hand in the bicycle that the customer has rented
-     * @param travelledTimeInHours The time the customer has rented the bicycle for
+     * @param rentTimeInHours The time the customer has rented the bicycle for
      * @param travelledDistance The distance the customer has travelled with the rented bicycle
      * @param bicycle The rented bicycle
      * @param company The company of which the customer is renting the bicycle
      */
-    public void handBicycleIn(int travelledTimeInHours, int travelledDistance, Bicycle bicycle, Company company) {
+    public void handBicycleIn(int rentTimeInHours, int travelledDistance, Bicycle bicycle, Company company) {
         double price = 0;
         // Check if the bicycle is currently rented by the customer
         if (company.getRentedBicycles().containsKey(bicycle) && company.getRentedBicycles().containsValue(this)) {
             // Calculate the total price the customer has to pay for renting the bicycle
-            price += (bicycle.getPrice() * travelledDistance) + (travelledTimeInHours * 2) - (bicycle.getDepositAmount());
+            price += (bicycle.getPrice() * travelledDistance) + (rentTimeInHours * 2) - bicycle.getDepositAmount();
             company.removeRentedBicycle(bicycle);
             // Check if the customer has enough money to pay for renting the bicycle
             if (this.balance >= price) {

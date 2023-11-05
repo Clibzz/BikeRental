@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class Company {
+    private String name;
     private HashSet<Bicycle> bicycles;
     private HashMap<Bicycle, Customer> rentedBicycles;
 
-    public Company() {
+    public Company(String name) {
+        this.name = name;
         this.bicycles = new HashSet<>();
         this.rentedBicycles = new HashMap<>();
     }

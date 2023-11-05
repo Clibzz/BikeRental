@@ -14,7 +14,7 @@ class CompanyTest {
 
     @BeforeEach
     void setUp() {
-        company = new Company();
+        company = new Company("Erazer");
         electricBike = new ElectricBike();
         mountainBike = new MountainBike();
         normalBike = new NormalBike();

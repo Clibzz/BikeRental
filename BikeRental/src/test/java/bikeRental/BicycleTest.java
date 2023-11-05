@@ -13,7 +13,7 @@ class BicycleTest {
 
     @BeforeEach
     void setUp() {
-        company = new Company();
+        company = new Company("Erazer");
         normalBike = new NormalBike();
         peter = new Customer("Peter", 75.69);
         pedro = new Customer("Pedro", 100.00);

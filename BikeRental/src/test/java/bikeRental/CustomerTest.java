@@ -14,7 +14,7 @@ class CustomerTest {
 
     @BeforeEach
     void setUp() {
-        company = new Company();
+        company = new Company("Erazer");
         anton =  new Customer("Anton", 70.54);
         andrea = new Customer("Andrea", 80.12);
         electricBike = new ElectricBike();
