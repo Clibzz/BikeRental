@@ -115,7 +115,7 @@ In the table below all the input (that the user has to input in order to make th
 </ul>
 
 # Class Diagram
-<img src="images/UML2.png">
+<img src="img/ClassDiagram.png">
 
 # Testplan
 In this section the testcases will be described to test the application.
