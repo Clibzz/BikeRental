@@ -399,21 +399,33 @@ In this section the testcases will be described. Every test case should be execu
     <tbody>
         <tr> 
             <td>1</td>
-            <td><code></code></td>
-            <td><code></code></td>
-            <td><code></code></td>
+            <td><code>MountainBike, Company</code></td>
+            <td><code>rentBicycle(mountainBike, company)</code></td>
+            <td><code>-</code></td>
         </tr>
-        <tr> 
+         <tr> 
             <td>2</td>
-            <td><code></code></td>
-            <td><code></code></td>
-            <td><code></code></td>
+            <td><code>MountainBike</code></td>
+            <td><code>getBicycles.contains(mountainBike)</code></td>
+            <td><code>true</code></td>
         </tr>
         <tr> 
             <td>3</td>
-            <td><code></code></td>
-            <td><code></code></td>
-            <td><code></code></td>
+            <td><code>ElectricBike, Company</code></td>
+            <td><code>rentBicycle(electricBike, company)</code></td>
+            <td><code>-</code></td>
+        </tr>
+        <tr> 
+            <td>4</td>
+            <td><code>Customer</code></td>
+            <td><code>getRentedBicycles.containsValue(anton)</code></td>
+            <td><code>true</code></td>
+        </tr>
+        <tr> 
+            <td>5</td>
+            <td><code>Customer</code></td>
+            <td><code>getBalance()</code></td>
+            <td><code>50.54</code></td>
         </tr>
     </tbody>
 <table>
@@ -431,21 +443,39 @@ In this section the testcases will be described. Every test case should be execu
     <tbody>
         <tr> 
             <td>1</td>
-            <td><code></code></td>
-            <td><code></code></td>
-            <td><code></code></td>
+            <td><code>ElectricBike, Company</code></td>
+            <td><code>rentBicycle(electricBike, company)</code></td>
+            <td><code>-</code></td>
         </tr>
         <tr> 
             <td>2</td>
-            <td><code></code></td>
-            <td><code></code></td>
-            <td><code></code></td>
+            <td><code>ElectricBike, Company</code></td>
+            <td><code>getRentedBicycles().containsValue(anton)</code></td>
+            <td><code>true</code></td>
         </tr>
         <tr> 
             <td>3</td>
-            <td><code></code></td>
-            <td><code></code></td>
-            <td><code></code></td>
+            <td><code>ElectricBike, Company</code></td>
+            <td><code>handBicycleIn(2, 25, electricBike, company)</code></td>
+            <td><code>-</code></td>
+        </tr>
+        <tr> 
+            <td>4</td>
+            <td><code>anton</code></td>
+            <td><code>getBalance()</code></td>
+            <td><code>54.04</code></td>
+        </tr>
+        <tr> 
+            <td>5</td>
+            <td><code>electricBike</code></td>
+            <td><code>getRentedBicycles().containsKey(electricBike)</code></td>
+            <td><code>false</code></td>
+        </tr>
+        <tr> 
+            <td>6</td>
+            <td><code>anton</code></td>
+            <td><code>getRentedBicycles().containsValue(anton)</code></td>
+            <td><code>false</code></td>
         </tr>
     </tbody>
 <table>
