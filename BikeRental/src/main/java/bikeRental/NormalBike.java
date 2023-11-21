@@ -1,11 +1,10 @@
 package bikeRental;
 
 public class NormalBike extends Bicycle {
-    private static double price;
+    private static final double price = 0.2;
 
     public NormalBike() {
         super();
-        this.price = 0.2;
     }
 
     public double getPrice() {

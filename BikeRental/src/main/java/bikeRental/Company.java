@@ -65,4 +65,15 @@ public class Company {
         }
         return totalTravelledKilometers;
     }
+
+    public int getTotalElectricKilometers() {
+        int totalElectric = 0;
+        for (Bicycle bicycle : this.bicycles) {
+            if (bicycle instanceof ElectricBike)
+            {
+                totalElectric += bicycle.getTravelledKilometers();
+            }
+        }
+        return totalElectric;
+    }
 }
